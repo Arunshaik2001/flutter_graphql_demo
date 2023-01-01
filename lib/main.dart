@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
     return GraphQLProvider(
       client: client,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
@@ -88,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: customSearchBar,
         automaticallyImplyLeading: false,
-        elevation: 0.8,
         actions: [
           IconButton(
             onPressed: () {
