@@ -4,7 +4,7 @@
 class Constants{
 
   static const String readRepositories = """
-    query Flutter_Github_GraphQL(\$login: String!) {
+    query GithubGraphQL(\$login: String!) {
   user(login: \$login) {
     avatarUrl(size: 200)
     location
