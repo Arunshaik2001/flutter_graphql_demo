@@ -50,8 +50,7 @@ class _RepositoryTileViewState extends State<RepositoryTileView> {
                   const Spacer(),
                   Mutation(
                     options: MutationOptions(
-                      document:
-                      (!starred) ? gql(addStar) : gql(removeStar),
+                      document: (!starred) ? gql(addStar) : gql(removeStar),
                       update: (GraphQLDataProxy cache, QueryResult? result) {
                         return cache;
                       },
