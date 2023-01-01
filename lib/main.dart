@@ -149,6 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
               return const Text('Loading');
             }
 
+            print(result.data);
+
             final userDetails = result.data?['user'];
             List repositories = result.data?['user']['repositories']['edges'];
 

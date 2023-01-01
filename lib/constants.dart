@@ -7,9 +7,7 @@ class Constants{
     query GithubGraphQL(\$login: String!) {
   user(login: \$login) {
     avatarUrl(size: 200)
-    location
     name
-    url
     email
     login
     repositories(first: 10) {
@@ -22,7 +20,6 @@ class Constants{
         node {
           id
           name
-          nameWithOwner
           viewerHasStarred
         }
       }
