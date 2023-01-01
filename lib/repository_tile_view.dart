@@ -4,9 +4,9 @@ import 'package:flutter_graphql_demo/constants.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class RepositoryTileView extends StatefulWidget {
-  final dynamic starredRepository;
+  final dynamic repository;
 
-  const RepositoryTileView({Key? key, required this.starredRepository})
+  const RepositoryTileView({Key? key, required this.repository})
       : super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class _RepositoryTileViewState extends State<RepositoryTileView> {
 
   @override
   Widget build(BuildContext context) {
-    final repository = widget.starredRepository;
+    final repository = widget.repository;
 
     ValueNotifier<bool> hasStarred =
         ValueNotifier(repository['node']['viewerHasStarred'] as bool);

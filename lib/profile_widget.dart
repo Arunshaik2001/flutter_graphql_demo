@@ -181,7 +181,7 @@ class ProfileWidget extends StatelessWidget {
                 itemCount: repositories.length,
                 itemBuilder: (context, index) {
                   return RepositoryTileView(
-                      starredRepository: repositories[index]);
+                      repository: repositories[index]);
                 },
               ),
             ),
