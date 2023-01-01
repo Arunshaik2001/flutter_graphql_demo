@@ -2,5 +2,5 @@
 
 graphql demo app
 
-https://user-images.githubusercontent.com/50947867/210169457-bc24991f-2c36-4f30-8266-147b3792feca.mp4
+https://user-images.githubusercontent.com/50947867/210170632-04f482cd-52ee-467d-bd1d-2d12c8d8f9dd.mp4
 
