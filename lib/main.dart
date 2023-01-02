@@ -83,54 +83,58 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController userNameTextEditingController =
       TextEditingController(text: "Arunshaik2001");
 
+  PreferredSizeWidget appBar(){
+    return AppBar(
+      title: customSearchBar,
+      automaticallyImplyLeading: false,
+      actions: [
+        IconButton(
+          onPressed: () {
+            setState(() {
+              if (customIcon.icon == Icons.search) {
+                customIcon = const Icon(Icons.cancel);
+                customSearchBar = ListTile(
+                  leading: const Icon(
+                    Icons.search,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                  title: TextFormField(
+                      cursorColor: Colors.white,
+                      controller: userNameTextEditingController,
+                      decoration: const InputDecoration(
+                        hintText: 'type userId...',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
+                      onEditingComplete: () {
+                        setState(() {});
+                      }),
+                );
+              } else {
+                customIcon = const Icon(Icons.search);
+                customSearchBar = const Text('My Github Demo App');
+              }
+            });
+          },
+          icon: customIcon,
+        )
+      ],
+      centerTitle: true,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: customSearchBar,
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                if (customIcon.icon == Icons.search) {
-                  customIcon = const Icon(Icons.cancel);
-                  customSearchBar = ListTile(
-                    leading: const Icon(
-                      Icons.search,
-                      color: Colors.white,
-                      size: 28,
-                    ),
-                    title: TextFormField(
-                        cursorColor: Colors.white,
-                        controller: userNameTextEditingController,
-                        decoration: const InputDecoration(
-                          hintText: 'type userId...',
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontStyle: FontStyle.italic,
-                          ),
-                          border: InputBorder.none,
-                        ),
-                        style: const TextStyle(
-                          color: Colors.white,
-                        ),
-                        onEditingComplete: () {
-                          setState(() {});
-                        }),
-                  );
-                } else {
-                  customIcon = const Icon(Icons.search);
-                  customSearchBar = const Text('My Github Demo App');
-                }
-              });
-            },
-            icon: customIcon,
-          )
-        ],
-        centerTitle: true,
-      ),
+      appBar: appBar(),
       body: Center(
         child: Query(
           options: QueryOptions(
